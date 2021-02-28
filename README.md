@@ -37,7 +37,6 @@
     -The interfae allows the user to fully customize how they cook by setting the time and changing the power level
   
 #### How Does a User Interact With a Microwave? List Common Sequences of Actions:
-  ###### Sequence of Actions:
     1. User places food into the microwave
     2. User selects desired cook time
       a. Pressing numbers to choose time
