@@ -5,10 +5,11 @@
 
 ## Report:
 #### Bad Microwave Interface:
-    ![badinterface](https://user-images.githubusercontent.com/28710355/109435445-21b3d180-79e0-11eb-960e-3883e6a81cd7.jpg)
-
+<img src="./assets/badinterface.jpg" width="50%">
+<img src="./assets/badmicrowave.jpg" width="50%">
 
 #### Bad Interface in Operation:
+  <img src="./assets/microwave.gif" width="50%">
 
 #### Issues + Why is is Bad:
     -I think this is a bad interface because:
