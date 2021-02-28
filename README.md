@@ -24,11 +24,11 @@
       6. Overall needs more description
 
 #### Common + Rare Microwave Uses. How Does the Interface Make it Easier?
-  ###### Common Microwave Uses:
+  ##### Common Microwave Uses:
     -Re-warm food
     -Cook food
     -Heat liquids
-  ###### Rare Microwave Uses:
+  ##### Rare Microwave Uses:
     -Heating fabric items
     -Clean/sterilize items
     -Extra stroage for things such as bread when not in use
