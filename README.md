@@ -5,8 +5,8 @@
 
 ## Report:
 #### Bad Microwave Interface:
-    ![](badinterface.jpg)
-    ![](badmicrowave.jpg)
+    ![](https://github.com/EmilyQElizabeth/HCI_Project1/blob/master/badinterface.jpg)
+    ![](https://github.com/EmilyQElizabeth/HCI_Project1/blob/master/badmicrowave.jpg)
 
 #### Bad Interface in Operation:
 
