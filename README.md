@@ -5,6 +5,7 @@
 
 ## Report:
 #### Bad Microwave Interface:
+    ![bad microwave interface](badinterface.jpg)
 
 #### Bad Interface in Operation:
 
