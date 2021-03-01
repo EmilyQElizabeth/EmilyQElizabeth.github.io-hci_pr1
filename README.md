@@ -99,7 +99,6 @@
   - My design supports disabilites in many ways:
     1. _Colorblind friendly color pallete_, utilizing the colors blue, pink, black, and gray. They maintain the contrast enough to remain visible to different types of colorblindness
     2. _Text to Speech_, is utilized everytime a user clicks a button on the interface. The feature can be toggled on/off using the mute button. This feature is especially helpful to visually impared users
-    3. _Braille_, is utilized in the two areas on the interface that aren't clickable, specifically where it says 'Power Level' and 'Select Time'. This feature is useful for visually impared users.
 
 #### **User Feedback:**
   - Feedback is given to the user in a few different ways:
