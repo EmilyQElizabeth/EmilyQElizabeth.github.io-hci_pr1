@@ -72,7 +72,7 @@
     3. Adding more description to the controls
     
 #### **Low-Fidelity Prototype Sketch:**
-  <img src="./assets/p1Sketch.png" width="50%">
+  <img src="./assets/p1Sketch.PNG" width="80%">
 
 #### **Touch Screen Design - Screen Size:**
   - 500 x 900
