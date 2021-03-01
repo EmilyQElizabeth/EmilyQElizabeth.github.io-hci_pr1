@@ -107,6 +107,6 @@
      2. The time on the clock will change as numbers in the 'Select Time' section are clicked on
      3. The buttons 'Timer', 'Cook', 'Mute', will change color upon selection so that the user knows that those will be used/are in use
 
-## **Processing**
+## **UX Design**
 
 ## **Gif of Final Interface:**
