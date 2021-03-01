@@ -75,7 +75,7 @@
   <img src="./assets/p1Sketch.PNG" width="80%">
 
 #### **Touch Screen Design - Screen Size:**
-  - 500 x 900
+  - 500 x 1060
 
 #### **Interactive Features:**
   - Timer Button 
