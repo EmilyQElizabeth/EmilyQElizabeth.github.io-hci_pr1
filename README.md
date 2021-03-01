@@ -107,5 +107,9 @@
      3. The buttons 'Timer', 'Cook', 'Mute', will change color upon selection so that the user knows that those will be used/are in use
 
 ## **UX Design**
+  - I was unable to complete the processing portion of this project, so I made the user interface in AdobeXD
+
+  <img src="./assets/uxui.PNG" width="50%">
 
 ## **Gif of Final Interface:**
+  <img src="./assets/p1EmilyQuintanilla.gif" width="50%">
