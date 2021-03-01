@@ -4,6 +4,876 @@
         <meta charset="UTF-8">
         <title>Emily Quintanilla - CS4331 Human Computer Interaction&comma; Project &num;1&colon; Microwave Interface</title>
         <style>
+/* From extension bierner.markdown-preview-github-styles */
+body {
+    background: white;
+}
+
+.vscode-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid transparent;
+}
+
+.vscode-body blockquote {
+    background-color: initial;
+}
+
+.vscode-body pre {
+    color: initial;
+    background: #f7f7f7 !important;
+}
+
+.vscode-body code {
+    color: inherit;
+}
+
+.vscode-body pre code {
+    color: initial;
+}
+
+.vscode-body code > div {
+    background: none
+}
+
+.vscode-body table th,
+.vscode-body table td {
+    border: 1px solid #ddd !important;
+}
+
+.vscode-body.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-body.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-body.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-body p,
+.vscode-body blockquote,
+.vscode-body ul,
+.vscode-body ol,
+.vscode-body dl,
+.vscode-body table,
+.vscode-body pre {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+body.vscode-body::-webkit-scrollbar {
+    background-color: white;
+}
+body.vscode-body::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 100, 100, 0.4);
+}
+body.vscode-body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(100, 100, 100, 0.7);
+}
+
+/* Generated from 'node_modules/github-markdown-css/github-markdown.css' */
+@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.vscode-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+  color: #24292e;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.vscode-body .pl-c {
+  color: #6a737d;
+}
+
+.vscode-body .pl-c1,
+.vscode-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.vscode-body .pl-e,
+.vscode-body .pl-en {
+  color: #6f42c1;
+}
+
+.vscode-body .pl-smi,
+.vscode-body .pl-s .pl-s1 {
+  color: #24292e;
+}
+
+.vscode-body .pl-ent {
+  color: #22863a;
+}
+
+.vscode-body .pl-k {
+  color: #d73a49;
+}
+
+.vscode-body .pl-s,
+.vscode-body .pl-pds,
+.vscode-body .pl-s .pl-pse .pl-s1,
+.vscode-body .pl-sr,
+.vscode-body .pl-sr .pl-cce,
+.vscode-body .pl-sr .pl-sre,
+.vscode-body .pl-sr .pl-sra {
+  color: #032f62;
+}
+
+.vscode-body .pl-v,
+.vscode-body .pl-smw {
+  color: #e36209;
+}
+
+.vscode-body .pl-bu {
+  color: #b31d28;
+}
+
+.vscode-body .pl-ii {
+  color: #fafbfc;
+  background-color: #b31d28;
+}
+
+.vscode-body .pl-c2 {
+  color: #fafbfc;
+  background-color: #d73a49;
+}
+
+.vscode-body .pl-c2::before {
+  content: "^M";
+}
+
+.vscode-body .pl-sr .pl-cce {
+  font-weight: bold;
+  color: #22863a;
+}
+
+.vscode-body .pl-ml {
+  color: #735c0f;
+}
+
+.vscode-body .pl-mh,
+.vscode-body .pl-mh .pl-en,
+.vscode-body .pl-ms {
+  font-weight: bold;
+  color: #005cc5;
+}
+
+.vscode-body .pl-mi {
+  font-style: italic;
+  color: #24292e;
+}
+
+.vscode-body .pl-mb {
+  font-weight: bold;
+  color: #24292e;
+}
+
+.vscode-body .pl-md {
+  color: #b31d28;
+  background-color: #ffeef0;
+}
+
+.vscode-body .pl-mi1 {
+  color: #22863a;
+  background-color: #f0fff4;
+}
+
+.vscode-body .pl-mc {
+  color: #e36209;
+  background-color: #ffebda;
+}
+
+.vscode-body .pl-mi2 {
+  color: #f6f8fa;
+  background-color: #005cc5;
+}
+
+.vscode-body .pl-mdr {
+  font-weight: bold;
+  color: #6f42c1;
+}
+
+.vscode-body .pl-ba {
+  color: #586069;
+}
+
+.vscode-body .pl-sg {
+  color: #959da5;
+}
+
+.vscode-body .pl-corl {
+  text-decoration: underline;
+  color: #032f62;
+}
+
+.vscode-body .octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
+
+.vscode-body a {
+  background-color: transparent;
+}
+
+.vscode-body a:active,
+.vscode-body a:hover {
+  outline-width: 0;
+}
+
+.vscode-body strong {
+  font-weight: inherit;
+}
+
+.vscode-body strong {
+  font-weight: bolder;
+}
+
+.vscode-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.vscode-body img {
+  border-style: none;
+}
+
+.vscode-body code,
+.vscode-body kbd,
+.vscode-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.vscode-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.vscode-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.vscode-body input {
+  overflow: visible;
+}
+
+.vscode-body [type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.vscode-body * {
+  box-sizing: border-box;
+}
+
+.vscode-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.vscode-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.vscode-body a:hover {
+  text-decoration: underline;
+}
+
+.vscode-body strong {
+  font-weight: 600;
+}
+
+.vscode-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+}
+
+.vscode-body hr::before {
+  display: table;
+  content: "";
+}
+
+.vscode-body hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.vscode-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.vscode-body td,
+.vscode-body th {
+  padding: 0;
+}
+
+.vscode-body h1,
+.vscode-body h2,
+.vscode-body h3,
+.vscode-body h4,
+.vscode-body h5,
+.vscode-body h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.vscode-body h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.vscode-body h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.vscode-body h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.vscode-body h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.vscode-body h5 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.vscode-body h6 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.vscode-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.vscode-body blockquote {
+  margin: 0;
+}
+
+.vscode-body ul,
+.vscode-body ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.vscode-body ol ol,
+.vscode-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.vscode-body ul ul ol,
+.vscode-body ul ol ol,
+.vscode-body ol ul ol,
+.vscode-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.vscode-body dd {
+  margin-left: 0;
+}
+
+.vscode-body code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.vscode-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.vscode-body .octicon {
+  vertical-align: text-bottom;
+}
+
+.vscode-body .pl-0 {
+  padding-left: 0 !important;
+}
+
+.vscode-body .pl-1 {
+  padding-left: 4px !important;
+}
+
+.vscode-body .pl-2 {
+  padding-left: 8px !important;
+}
+
+.vscode-body .pl-3 {
+  padding-left: 16px !important;
+}
+
+.vscode-body .pl-4 {
+  padding-left: 24px !important;
+}
+
+.vscode-body .pl-5 {
+  padding-left: 32px !important;
+}
+
+.vscode-body .pl-6 {
+  padding-left: 40px !important;
+}
+
+.vscode-body::before {
+  display: table;
+  content: "";
+}
+
+.vscode-body::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.vscode-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.vscode-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.vscode-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.vscode-body .anchor {
+  float: left;
+  padding-right: 4px;
+  margin-left: -20px;
+  line-height: 1;
+}
+
+.vscode-body .anchor:focus {
+  outline: none;
+}
+
+.vscode-body p,
+.vscode-body blockquote,
+.vscode-body ul,
+.vscode-body ol,
+.vscode-body dl,
+.vscode-body table,
+.vscode-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.vscode-body hr {
+  height: 0.25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #e1e4e8;
+  border: 0;
+}
+
+.vscode-body blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+.vscode-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.vscode-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.vscode-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+}
+
+.vscode-body h1,
+.vscode-body h2,
+.vscode-body h3,
+.vscode-body h4,
+.vscode-body h5,
+.vscode-body h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.vscode-body h1 .octicon-link,
+.vscode-body h2 .octicon-link,
+.vscode-body h3 .octicon-link,
+.vscode-body h4 .octicon-link,
+.vscode-body h5 .octicon-link,
+.vscode-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.vscode-body h1:hover .anchor,
+.vscode-body h2:hover .anchor,
+.vscode-body h3:hover .anchor,
+.vscode-body h4:hover .anchor,
+.vscode-body h5:hover .anchor,
+.vscode-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.vscode-body h1:hover .anchor .octicon-link,
+.vscode-body h2:hover .anchor .octicon-link,
+.vscode-body h3:hover .anchor .octicon-link,
+.vscode-body h4:hover .anchor .octicon-link,
+.vscode-body h5:hover .anchor .octicon-link,
+.vscode-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.vscode-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2em;
+  border-bottom: 1px solid #eaecef;
+}
+
+.vscode-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid #eaecef;
+}
+
+.vscode-body h3 {
+  font-size: 1.25em;
+}
+
+.vscode-body h4 {
+  font-size: 1em;
+}
+
+.vscode-body h5 {
+  font-size: 0.875em;
+}
+
+.vscode-body h6 {
+  font-size: 0.85em;
+  color: #6a737d;
+}
+
+.vscode-body ul,
+.vscode-body ol {
+  padding-left: 2em;
+}
+
+.vscode-body ul ul,
+.vscode-body ul ol,
+.vscode-body ol ol,
+.vscode-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.vscode-body li {
+  word-wrap: break-all;
+}
+
+.vscode-body li>p {
+  margin-top: 16px;
+}
+
+.vscode-body li+li {
+  margin-top: 0.25em;
+}
+
+.vscode-body dl {
+  padding: 0;
+}
+
+.vscode-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.vscode-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.vscode-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+.vscode-body table th {
+  font-weight: 600;
+}
+
+.vscode-body table th,
+.vscode-body table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.vscode-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.vscode-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.vscode-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.vscode-body img[align=right] {
+  padding-left: 20px;
+}
+
+.vscode-body img[align=left] {
+  padding-right: 20px;
+}
+
+.vscode-body code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 3px;
+}
+
+.vscode-body pre {
+  word-wrap: normal;
+}
+
+.vscode-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.vscode-body .highlight {
+  margin-bottom: 16px;
+}
+
+.vscode-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.vscode-body .highlight pre,
+.vscode-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
+
+.vscode-body pre code {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.vscode-body .full-commit .btn-outline:not(:disabled):hover {
+  color: #005cc5;
+  border-color: #005cc5;
+}
+
+.vscode-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+}
+
+.vscode-body :checked+.radio-label {
+  position: relative;
+  z-index: 1;
+  border-color: #0366d6;
+}
+
+.vscode-body .task-list-item {
+  list-style-type: none;
+}
+
+.vscode-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.vscode-body .task-list-item input {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.vscode-body hr {
+  border-bottom-color: #eee;
+}
+
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
 </style>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
@@ -27,80 +897,173 @@
 <h2 id="project-link">Project Link:</h2>
 <p>-<a href="https://emilyqelizabeth.github.io/HCI_Project1/">Emily Quintanilla Project 1</a></p>
 <h2 id="report">Report:</h2>
-<h4 id="bad-microwave-interface">Bad Microwave Interface:</h4>
-<img src=".\assets\badinterface.jpg" width="11%" height="11%">
-<img src=".\assets\badmicrowave.jpg" width="50.2%" >
-<h4 id="bad-interface-in-operation">Bad Interface in Operation:</h4>
+<h4 id="bad-microwave-interface"><strong>Bad Microwave Interface:</strong></h4>
+  <img src=".\assets\badinterface.jpg" width="50%">
+  <img src=".\assets\badmicrowave.jpg" width="50%">
+<h4 id="bad-interface-in-operation"><strong>Bad Interface in Operation:</strong></h4>
   <img src=".\assets\microwave.gif" width="50%">
-<h4 id="issues--why-is-is-bad">Issues + Why is is Bad:</h4>
-<pre><code>-I think this is a bad interface because:
-  1. Unless you have used a microwave before, button uses are unclear
-  2. Clock and power level should have more instructions for the user
-  3. There are too many options for pre-set cooking times
-    a. It doesn't say how long the times are
-  4. I don't think a clock on a microwave is necessary
-  5. Does not support people with disabilities
-    a. There is no option to hear button choices
-    b. No braille
-  6. Overall needs more description
-</code></pre>
-<h4 id="common--rare-microwave-uses-how-does-the-interface-make-it-easier">Common + Rare Microwave Uses. How Does the Interface Make it Easier?</h4>
-<h5 id="common-microwave-uses">Common Microwave Uses:</h5>
-<pre><code>-Re-warm food
--Cook food
--Heat liquids
-</code></pre>
-<h5 id="rare-microwave-uses">Rare Microwave Uses:</h5>
-<pre><code>-Heating fabric items
--Clean/sterilize items
--Extra stroage for things such as bread when not in use
--As a clock
--As a timer
-</code></pre>
-<h4 id="how-the-interface-makes-these-uses-easier">How the Interface Makes These Uses Easier:</h4>
-<pre><code>-The interface is especially helpful to a user if they are cooking food in their microwave from scratch.
--The interfae allows the user to fully customize how they cook by setting the time and changing the power level
-</code></pre>
-<h4 id="how-does-a-user-interact-with-a-microwave-list-common-sequences-of-actions">How Does a User Interact With a Microwave? List Common Sequences of Actions:</h4>
-<pre><code>1. User places food into the microwave
-2. User selects desired cook time
-  a. Pressing numbers to choose time
-  b. Using pre-set buttons such as 'popcorn'
-3. User presses start button
-4. After time is up, user will either
-  a. Stop time before it completely ends or when it starts beeping
-  b. Open microwave/pause time and remove food
-</code></pre>
-<h4 id="how-does-the-interface-help-the-user-figure-out-how-to-work-the-microwave">How Does the Interface Help the User Figure Out How to Work the Microwave:</h4>
-<pre><code>-Buttons usually have names or numbers on them, telling the user what they are used for
--The that aren't specifically labeled are usually figured out using ones intuition
-</code></pre>
-<h4 id="how-does-the-microwave-provide-feedback-to-the-user">How Does the Microwave Provide Feedback to the User?</h4>
-<pre><code>-The microwave provides feedback to the user through the time and sounds
--When buttons are clicked, usually the microwave will make a chime noise
--When the food is done being cooked it will chime
--The user will see a time countdown on the clock area telling them how much longer their food is being cooked for, or their selected cooking time.
-</code></pre>
-<h4 id="what-are-some-common-mistakes-you-can-make-with-this-current-design">What Are Some Common Mistakes You Can Make With This Current Design?</h4>
-<pre><code>-There are too many options to use with the same set of numbers. If someone doesn't know about how to customize these settings, they may make mistakes when cooking.
--The corresponding customizable time/number options include 'Time Cook', 'Clock', 'Power Level', 'Timer'
--The user may make the mistake of undercooking or overcooking their food if they us the pre-set cooking options, as they do not tell the user the power level or cooking time.
--The pre-set cooking options include 'Popcorn', 'Pizza', 'Beverage', 'Potato', 'Vegetable'
-</code></pre>
-<h4 id="improvements-to-make-on-the-control-interface">Improvements to Make on the Control Interface:</h4>
-<pre><code>-The control interface could be significantly improved by:
-  1. Removing unncesessary pre-set cooking options
-  2. Limiting the cooking options
-  3. Adding more description to the controls
-</code></pre>
-<h4 id="low-fidelity-prototype-sketch">Low-Fidelity Prototype Sketch:</h4>
-<h4 id="touch-screen-design---screen-size">Touch Screen Design - Screen Size:</h4>
-<h4 id="interactive-features">Interactive Features:</h4>
-<h4 id="how-my-design-supports-disabilities">How My Design Supports Disabilities:</h4>
-<h4 id="user-feedback">User Feedback:</h4>
-<h4 id="extra-useful-information-on-the-display-interface">Extra Useful Information on the Display Interface:</h4>
-<h4 id="processing">Processing</h4>
-<h4 id="gif-of-final-interface">Gif of Final Interface:</h4>
+<h4 id="issues--why-is-is-bad"><strong>Issues + Why is is Bad:</strong></h4>
+<ul>
+<li>I think this is a bad interface because:</li>
+</ul>
+<ol>
+<li>Unless you have used a microwave before, button uses are unclear</li>
+<li>Clock and power level should have more instructions for the user</li>
+<li>There are too many options for pre-set cooking times
+<ol>
+<li>It doesn't say how long the times are</li>
+</ol>
+</li>
+<li>I don't think a clock on a microwave is necessary</li>
+<li>Does not support people with disabilities
+<ol>
+<li>There is no option to hear button choices</li>
+<li>No braille</li>
+</ol>
+</li>
+<li>Overall the interface needs more description</li>
+</ol>
+<h4 id="common--rare-microwave-uses-how-does-the-interface-make-it-easier"><strong>Common + Rare Microwave Uses. How Does the Interface Make it Easier?</strong></h4>
+<h4 id="common-microwave-uses">Common Microwave Uses:</h4>
+<ul>
+<li>Re-warm food</li>
+<li>Cook food</li>
+<li>Heat liquids</li>
+</ul>
+<h4 id="rare-microwave-uses">Rare Microwave Uses:</h4>
+<ul>
+<li>Heating fabric items</li>
+<li>Clean/sterilize items</li>
+<li>Extra stroage for things such as bread when not in use</li>
+<li>As a clock</li>
+<li>As a timer</li>
+</ul>
+<h4 id="how-the-interface-makes-these-uses-easier"><strong>How the Interface Makes These Uses Easier:</strong></h4>
+<ul>
+<li>The interface is especially helpful to a user if they are cooking food in their microwave from scratch.</li>
+<li>The interfae allows the user to fully customize how they cook by setting the time and changing the power level</li>
+</ul>
+<h4 id="how-does-a-user-interact-with-a-microwave-list-common-sequences-of-actions"><strong>How Does a User Interact With a Microwave? List Common Sequences of Actions:</strong></h4>
+<ol>
+<li>User places food into the microwave</li>
+<li>User selects desired cook time
+<ol>
+<li>Pressing numbers to choose time</li>
+<li>Using pre-set buttons such as 'popcorn'</li>
+</ol>
+</li>
+<li>User presses start button</li>
+<li>After time is up, user will either
+<ol>
+<li>Stop time before it completely ends or when it starts beeping</li>
+<li>Open microwave/pause time and remove food</li>
+</ol>
+</li>
+</ol>
+<h4 id="how-does-the-interface-help-the-user-figure-out-how-to-work-the-microwave"><strong>How Does the Interface Help the User Figure Out How to Work the Microwave:</strong></h4>
+<ul>
+<li>Buttons usually have names or numbers on them, telling the user what they are used for</li>
+<li>The that aren't specifically labeled are usually figured out using ones intuition</li>
+</ul>
+<h4 id="how-does-the-microwave-provide-feedback-to-the-user"><strong>How Does the Microwave Provide Feedback to the User?</strong></h4>
+<ul>
+<li>The microwave provides feedback to the user through the time and sounds</li>
+<li>When buttons are clicked, usually the microwave will make a chime noise</li>
+<li>When the food is done being cooked it will chime</li>
+<li>The user will see a time countdown on the clock area telling them how much longer their food is being cooked for, or their selected cooking time.</li>
+</ul>
+<h4 id="what-are-some-common-mistakes-you-can-make-with-this-current-design"><strong>What Are Some Common Mistakes You Can Make With This Current Design?</strong></h4>
+<ul>
+<li>There are too many options to use with the same set of numbers. If someone doesn't know about how to customize these settings, they may make mistakes when cooking.</li>
+<li>The corresponding customizable time/number options include 'Time Cook', 'Clock', 'Power Level', 'Timer'</li>
+<li>The user may make the mistake of undercooking or overcooking their food if they us the pre-set cooking options, as they do not tell the user the power level or cooking time.</li>
+<li>The pre-set cooking options include 'Popcorn', 'Pizza', 'Beverage', 'Potato', 'Vegetable'</li>
+</ul>
+<h4 id="improvements-to-make-on-the-control-interface"><strong>Improvements to Make on the Control Interface:</strong></h4>
+<ul>
+<li>The control interface could be significantly improved by:
+<ol>
+<li>Removing unncesessary pre-set cooking options</li>
+<li>
+<ol>
+<li>Limiting the cooking options</li>
+</ol>
+</li>
+<li>Adding more description to the controls</li>
+</ol>
+</li>
+</ul>
+<h4 id="low-fidelity-prototype-sketch"><strong>Low-Fidelity Prototype Sketch:</strong></h4>
+  <img src=".\assets\p1Sketch.png" width="50%">
+<h4 id="touch-screen-design---screen-size"><strong>Touch Screen Design - Screen Size:</strong></h4>
+<ul>
+<li>500 x 900</li>
+</ul>
+<h4 id="interactive-features"><strong>Interactive Features:</strong></h4>
+<ul>
+<li>Timer Button
+<ul>
+<li>This button allows for the user to select a time without the microwave heating</li>
+</ul>
+</li>
+<li>Cook Button
+<ul>
+<li>This button allows for the user to select a time to cook/warm an item, where the microwave will heat</li>
+</ul>
+</li>
+<li>Number Buttons
+<ul>
+<li>Numbers 0-9 for the user to customize Timer and Cook times</li>
+</ul>
+</li>
+<li>Add 30 Seconds Button
+<ul>
+<li>Adds 30 seconds to total selected time on either the Timer or Cook option</li>
+</ul>
+</li>
+<li>Power Level Slider
+<ul>
+<li>Allows the user to customize the wattage they want their food cooked with. Utilizes a slider bar to give the user a power range</li>
+</ul>
+</li>
+<li>Start Button
+<ul>
+<li>Start button starts the timer or cook options based off time chosen</li>
+</ul>
+</li>
+<li>Stop Button
+<ul>
+<li>Stop button stops the timer or cook options</li>
+</ul>
+</li>
+<li>Mute Button
+<ul>
+<li>Stops the microwave from using the text to speech feature</li>
+</ul>
+</li>
+</ul>
+<h4 id="how-my-design-supports-disabilities"><strong>How My Design Supports Disabilities:</strong></h4>
+<ul>
+<li>My design supports disabilites in many ways:
+<ol>
+<li><em>Colorblind friendly color pallete</em>, utilizing the colors blue, pink, black, and gray. They maintain the contrast enough to remain visible to different types of colorblindness</li>
+<li><em>Text to Speech</em>, is utilized everytime a user clicks a button on the interface. The feature can be toggled on/off using the mute button. This feature is especially helpful to visually impared users</li>
+<li><em>Braille</em>, is utilized in the two areas on the interface that aren't clickable, specifically where it says 'Power Level' and 'Select Time'. This feature is useful for visually impared users.</li>
+</ol>
+</li>
+</ul>
+<h4 id="user-feedback"><strong>User Feedback:</strong></h4>
+<ul>
+<li>Feedback is given to the user in a few different ways:
+<ol>
+<li>The microwave will chime on button clicks and when the timer or cook options have finished</li>
+<li>The time on the clock will change as numbers in the 'Select Time' section are clicked on</li>
+<li>The buttons 'Timer', 'Cook', 'Mute', will change color upon selection so that the user knows that those will be used/are in use</li>
+</ol>
+</li>
+</ul>
+<h2 id="processing"><strong>Processing</strong></h2>
+<h2 id="gif-of-final-interface"><strong>Gif of Final Interface:</strong></h2>
 
     </body>
     </html>
