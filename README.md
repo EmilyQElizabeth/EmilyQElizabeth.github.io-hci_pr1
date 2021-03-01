@@ -109,7 +109,10 @@
 ## **UX Design**
   - I was unable to complete the processing portion of this project, so I made the user interface in AdobeXD
 
-  <img src="./assets/uxui.PNG" width="50%">
+  <img src="./assets/uxui.PNG" width="20%">
 
 ## **Gif of Final Interface:**
-  <img src="./assets/p1EmilyQuintanilla.gif" width="50%">
+  <img src="./assets/p1EmilyQuintanilla.gif" width="20%">
+
+## **YouTube Demo**
+
