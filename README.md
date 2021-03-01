@@ -1,7 +1,7 @@
 # Emily Quintanilla - CS4331 Human Computer Interaction, Project #1: Microwave Interface
 
 ## Project Link:
-  -[Emily Quintanilla Project 1](https://emilyqelizabeth.github.io/HCI_Project1/)
+  -[Emily Quintanilla Project 1](https://emilyqelizabeth.github.io/p1EmilyQuintanilla/)
 
 ## Report:
 #### **Bad Microwave Interface:**
