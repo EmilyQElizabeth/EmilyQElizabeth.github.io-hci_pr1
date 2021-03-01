@@ -5,8 +5,8 @@
 
 ## Report:
 #### **Bad Microwave Interface:**
-  <img src="./assets/badinterface.jpg" width="50%">
-  <img src="./assets/badmicrowave.jpg" width="50%">
+  <img src="./assets/badinterface.jpg" width="11%" Height="11%">
+  <img src="./assets/badmicrowave.jpg" width="50.2%">
 
 #### **Bad Interface in Operation:**
   <img src="./assets/microwave.gif" width="50%">
